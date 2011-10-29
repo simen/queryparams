@@ -1,4 +1,4 @@
-# Querystring
+# QueryParams
 
 A straight forward gem to convert ruby hashes and arrays to http query strings. It supports hashes, arrays, nested hashes and arrays of hashes and all combinations thereof. E.g.:
 

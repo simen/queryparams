@@ -1,7 +1,7 @@
-require "querystring/version"
+require "queryparams/version"
 require "cgi"
 
-module Querystring
+module QueryParams
 
   def self.encode(value, key = nil)
     q = []
