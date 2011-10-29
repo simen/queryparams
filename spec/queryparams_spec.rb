@@ -4,6 +4,7 @@ Bundler.require
 describe QueryParams do 
   it "generates nothing if need be" do
     QueryParams.encode({}).should eq ""
+    QueryParams.encode(nil).should eq ""
   end
 
   it "generates a straight forward query string" do
