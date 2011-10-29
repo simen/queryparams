@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Simen Svale Skogsrud"]
   s.email       = ["simen@bengler.no"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{A straight forward gem to convert ruby hashes and arrays to http query strings.}
+  s.description = %q{ It supports hashes, arrays, nested hashes and arrays of hashes and all combinations thereof.}
 
   s.rubyforge_project = "querystring"
 
