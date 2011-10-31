@@ -20,6 +20,6 @@ describe QueryParams do
   end
 
   it "handles arrays of hashes" do
-    QueryParams.encode({a: [{b:'c', d:'e'}, {f:'g'}]}).should eq "a[][b]=c&a[][d]=e&a[][f]=g"
+    QueryParams.encode({a: [{b:'c', d:'e'}, {b:'g'}]}).should eq "a[][b]=c&a[][d]=e&a[][b]=g"
   end
 end
