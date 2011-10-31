@@ -12,4 +12,4 @@ A straight forward gem to convert ruby hashes and arrays to http query strings. 
     => "a[0]=bingo&a[1]=hepp"
 
     QueryParams.encode({a: [{b:'c', d:'e'}, {f:'g'}]})
-    => "a[0][b]=c&a[0][d]=e&a[1][f]=g"
+    => "a[][b]=c&a[][d]=e&a[][f]=g"
