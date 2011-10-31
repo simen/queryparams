@@ -7,9 +7,9 @@ module QueryParams
     q = []
     case value
     when Hash
-      value.each { |k,v| q << encode(v, append_key(key,k)) }
+      q += value.map { |k,v| encode(v, append_key(key,k)) }
     when Array
-      value.each { |v| q << encode(v, "#{key}[]") }
+      q += value.map { |v| encode(v, "#{key}[]") }
     when nil
       return ''
     else
