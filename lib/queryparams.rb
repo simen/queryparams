@@ -4,18 +4,13 @@ require "cgi"
 module QueryParams
 
   def self.encode(value, key = nil)
-    q = []
     case value
-    when Hash
-      q += value.map { |k,v| encode(v, append_key(key,k)) }
-    when Array
-      q += value.map { |v| encode(v, "#{key}[]") }
-    when nil
-      return ''
-    else
-      return "#{key}=#{CGI.escape(value.to_s)}" 
+    when Hash  then value.map { |k,v| encode(v, append_key(key,k)) }.join('&')
+    when Array then value.map { |v| encode(v, "#{key}[]") }.join('&')
+    when nil   then ''
+    else            
+      "#{key}=#{CGI.escape(value.to_s)}" 
     end
-    q.join('&')
   end
 
   private
