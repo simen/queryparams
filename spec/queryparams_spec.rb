@@ -16,10 +16,10 @@ describe QueryParams do
   end
 
   it "handles arrays" do
-    QueryParams.encode({a: ['bingo', 'hepp']}).should eq "a[0]=bingo&a[1]=hepp"
+    QueryParams.encode({a: ['bingo', 'hepp']}).should eq "a[]=bingo&a[]=hepp"
   end
 
   it "handles arrays of hashes" do
-    QueryParams.encode({a: [{b:'c', d:'e'}, {f:'g'}]}).should eq "a[0][b]=c&a[0][d]=e&a[1][f]=g"
+    QueryParams.encode({a: [{b:'c', d:'e'}, {f:'g'}]}).should eq "a[][b]=c&a[][d]=e&a[][f]=g"
   end
 end

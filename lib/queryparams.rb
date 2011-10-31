@@ -9,7 +9,7 @@ module QueryParams
     when Hash
       value.each { |k,v| q << encode(v, append_key(key,k)) }
     when Array
-      value.each_with_index { |v,i| q << encode(v, append_key(key, i)) }
+      value.each { |v| q << encode(v, "#{key}[]") }
     when nil
       return ''
     else
