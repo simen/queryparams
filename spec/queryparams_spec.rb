@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-describe QueryParams do 
+describe QueryParams do
   it "generates nothing if need be" do
     QueryParams.encode({}).should eq ""
     QueryParams.encode(nil).should eq ""
@@ -16,10 +16,11 @@ describe QueryParams do
   end
 
   it "handles arrays" do
-    QueryParams.encode({a: ['bingo', 'hepp']}).should eq "a[]=bingo&a[]=hepp"
+    QueryParams.encode_with_index({a: ['bingo', 'hepp']}).should eq "a[0]=bingo&a[1]=hepp"
   end
 
   it "handles arrays of hashes" do
-    QueryParams.encode({a: [{b:'c', d:'e'}, {b:'g'}]}).should eq "a[][b]=c&a[][d]=e&a[][b]=g"
+    QueryParams.encode({a: [{b:'c', d:'e'}, {b:'g'}]}).should eq "a[0][b]=c&a[0][d]=e&a[1][b]=g"
   end
+
 end
