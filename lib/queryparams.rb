@@ -1,5 +1,5 @@
 require "queryparams/version"
-require "cgi"
+require "httpclient"
 
 module QueryParams
 
@@ -9,7 +9,7 @@ module QueryParams
     when Array then value.map { |v| encode(v, "#{key}[]") }.join('&')
     when nil   then ''
     else            
-      "#{key}=#{CGI.escape(value.to_s)}" 
+      "#{URI.encode_www_form_component(key.to_s)}=#{URI.encode_www_form_component(value.to_s)}" 
     end
   end
 
